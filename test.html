@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Farm Dashboard</title>
+  <link rel="stylesheet" href="css/test.css"> <!-- cấu hình css cho warehouse -->
+  <!-- ANIMATED.CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+  <header>
+    <h1 class="project-name"><img id="logo" src="/img/logo_smartfarm.jpg">SMART FARM</h1>
+    <select id="zoneSelector" onchange="updateDashboard()">
+      <option value="A">Zone A</option>
+      <option value="B">Zone B</option>
+      <option value="C">Zone C</option>
+    </select>
+    <div class="time" id="clock">--:--:--</div>
+  </header>
+
+  <section class="container-section">
+    <section class="dashboard">
+      <div class="card animate">
+        <img class="card-img" src="img/temp.gif">
+        <h2 class="card-value">
+          <span id="temperature"></span>°C
+        </h2>
+        <p class="card-title">Nhiệt độ</p>
+      </div>
+
+      <div class="card animate">
+        <img class="card-img" src="img/humidity.gif">
+        <h2 class="card-value">
+          <span id="humidity"></span>%
+        </h2>
+        <p class="card-title">Độ ẩm</p>
+      </div>
+
+      <div class="card animate">
+        <img class="card-img" src="img/light-sensor.gif">
+        <h2 class="card-value">
+          <span id="lux"></span>&nbsp;lux
+        </h2>
+        <p class="card-title">Ánh sáng</p>
+      </div>
+
+      <div class="card animate">
+        <img class="card-img" src="img/gas-leak.gif">
+        <h2 class="card-value">
+          <span id="co2"></span>&nbsp;ppm
+        </h2>
+        <p class="card-title">CO₂</p>
+      </div>
+    </section>
+
+    <section class="devices">
+      <div class="device animate">
+        <img class="device-img" src="img/light-off.gif">
+        <p class="device-title">Đèn trồng cây</p>
+        <button onclick="handleButtonClick('Đèn trồng cây', 'On')">On</button>
+        <button onclick="handleButtonClick('Đèn trồng cây', 'Off')">Off</button>
+      </div>
+      <div class="device animate">
+        <img class="device-img" src="img/air-conditioner-off.gif">
+        <p class="device-title">Quạt thông gió</p>
+        <button onclick="handleButtonClick('Quạt thông gió', 'On')">On</button>
+        <button onclick="handleButtonClick('Quạt thông gió', 'Off')">Off</button>
+      </div>
+      <div class="device animate">
+        <img class="device-img" src="img/water-hose-off.gif">
+        <p class="device-title">Hệ thống tưới</p>
+        <button onclick="handleButtonClick('Hệ thống tưới', 'On')">On</button>
+        <button onclick="handleButtonClick('Hệ thống tưới', 'Off')">Off</button>
+      </div>
+      <div class="device animate">
+        <img class="device-img" src="img/alarm-off.gif">
+        <p class="device-title">Loa cảnh báo</p>
+        <button onclick="handleButtonClick('Loa cảnh báo', 'On')">On</button>
+        <button onclick="handleButtonClick('Loa cảnh báo', 'Off')">Off</button>
+      </div>
+    </section>
+
+    <footer>
+      Thành viên: Phan Anh Quốc 21161076, Ngô Phúc Đăng 22161115, Nguyễn Ngọc Hoàng 22161124
+      <p>Liên hệ: 21161076@student.edu.hcmute.com</p>
+    </footer>
+  </section>
+
+  <!-- jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- FIREBASE -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+  <!-- js link -->
+  <script src="js/test.js"></script>
+</body>
+
+</html>
